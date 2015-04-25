@@ -17,8 +17,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setExtendedState(MAXIMIZED_BOTH);
-        
-         setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/lib/Ezio.png")));
+         setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/images/logo.png")));
     }
 
     /**
