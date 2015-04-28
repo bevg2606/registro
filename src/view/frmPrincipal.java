@@ -5,17 +5,23 @@
  */
 package view;
 
+
 import java.awt.Toolkit;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Reyna Del Campo
  */
 public class frmPrincipal extends javax.swing.JFrame {
-    
+
     public frmPrincipal() {
         initComponents();
+        
         this.setLocationRelativeTo(null);
         this.setExtendedState(MAXIMIZED_BOTH);
         setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/images/logo.png")));
@@ -31,6 +37,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -39,16 +46,30 @@ public class frmPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("REYNA DEL CAMPO");
 
+        jButton1.setText("Date");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
         desktopPane.setLayout(desktopPaneLayout);
         desktopPaneLayout.setHorizontalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1256, Short.MAX_VALUE)
+            .addGroup(desktopPaneLayout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(jButton1)
+                .addContainerGap(1130, Short.MAX_VALUE))
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 369, Short.MAX_VALUE)
+            .addGroup(desktopPaneLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jButton1)
+                .addContainerGap(312, Short.MAX_VALUE))
         );
+        desktopPane.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenu1.setText("Registro");
 
@@ -86,6 +107,20 @@ public class frmPrincipal extends javax.swing.JFrame {
         showCenterInternal(frmEmpleado);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        Date myDate = new Date();
+        JOptionPane.showMessageDialog(rootPane, myDate);
+        SimpleDateFormat mdyFormat = new SimpleDateFormat("MM-dd-yyyy");
+        SimpleDateFormat dmyFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String mdy = mdyFormat.format(myDate);
+        String dmy = dmyFormat.format(myDate);
+        JOptionPane.showMessageDialog(rootPane, dmy);
+        JOptionPane.showMessageDialog(rootPane, dmy);
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -120,8 +155,8 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
     }
-    
-     public void showCenterInternal(JInternalFrame frm) {
+
+    public void showCenterInternal(JInternalFrame frm) {
         int x = (desktopPane.getWidth() / 2) - (frm.getWidth() / 2);
         int y = (desktopPane.getHeight() / 2) - (frm.getHeight() / 2);
         if (frm.isShowing()) {
@@ -135,6 +170,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
