@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/04/2015 01:11:11 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Empleado" table="empleado" catalog="reyna" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="20" not-null="true" />
+        </property>
+        <property name="ape1" type="string">
+            <column name="ape1" length="20" not-null="true" />
+        </property>
+        <property name="ape2" type="string">
+            <column name="ape2" length="20" not-null="true" />
+        </property>
+        <property name="sexo" type="char">
+            <column name="sexo" length="1" not-null="true" />
+        </property>
+        <property name="estCivil" type="string">
+            <column name="est_civil" length="30" not-null="true" />
+        </property>
+        <property name="tipoSangre" type="string">
+            <column name="tipo_sangre" length="3" not-null="true" />
+        </property>
+        <property name="fechaNac" type="date">
+            <column name="fecha_nac" length="10" not-null="true" />
+        </property>
+        <property name="enfermedad" type="java.lang.Boolean">
+            <column name="enfermedad" />
+        </property>
+        <property name="espEnferme" type="string">
+            <column name="esp_enferme" length="100" />
+        </property>
+        <property name="nacionalidad" type="string">
+            <column name="nacionalidad" length="50" not-null="true" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="200" />
+        </property>
+        <property name="telCasa" type="java.lang.Integer">
+            <column name="tel_casa" />
+        </property>
+        <property name="telCel" type="java.lang.Integer">
+            <column name="tel_cel" />
+        </property>
+        <property name="emergencia" type="string">
+            <column name="emergencia" length="100" />
+        </property>
+        <property name="telEmergencia" type="java.lang.Integer">
+            <column name="tel_emergencia" />
+        </property>
+        <property name="puesto" type="string">
+            <column name="puesto" length="50" />
+        </property>
+        <property name="fechaIngreso" type="date">
+            <column name="fecha_ingreso" length="10" not-null="true" />
+        </property>
+        <property name="fechaEgreso" type="date">
+            <column name="fecha_egreso" length="10" not-null="true" />
+        </property>
+        <property name="foto" type="binary">
+            <column name="foto" />
+        </property>
+    </class>
+</hibernate-mapping>
